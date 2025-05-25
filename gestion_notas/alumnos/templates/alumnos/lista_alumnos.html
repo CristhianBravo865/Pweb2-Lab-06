@@ -1,0 +1,9 @@
+<h1>Alumnos</h1>
+<ul>
+    {% for alumno in alumnos %}
+        <li>{{ alumno.nombre }} {{ alumno.apellido }} (CUI: {{ alumno.CUI }})</li>
+    {% empty %}
+        <li>No hay alumnos ingresados.</li>
+    {% endfor %}
+</ul>
+<a href="{% url 'crear_alumno' %}">Agregar nuevo alumno</a>
