@@ -21,7 +21,7 @@ def crear_curso(request):
             return redirect('lista_cursos')
     else:
         form = CursoForm()
-    return render(request, 'core/crear_curso.html', {'form': form})
+    return render(request, 'alumnos/crear_curso.html', {'form': form})
 
 def crear_nota(request):
     if request.method == "POST":
@@ -31,22 +31,22 @@ def crear_nota(request):
             return redirect('lista_notas')
     else:
         form = NotaAlumnoPorCursoForm()
-    return render(request, 'core/crear_nota.html', {'form': form})
+    return render(request, 'alumnos/crear_nota.html', {'form': form})
 
 def lista_alumnos(request):
     alumnos = Alumno.objects.all()
-    return render(request, 'core/lista_alumnos.html', {'alumnos': alumnos})
+    return render(request, 'alumnos/lista_alumnos.html', {'alumnos': alumnos})
 
 def lista_cursos(request):
     cursos = Curso.objects.all()
-    return render(request, 'core/lista_cursos.html', {'cursos': cursos})
+    return render(request, 'alumnos/lista_cursos.html', {'cursos': cursos})
 
 def lista_notas(request):
     notas = NotaAlumnoPorCurso.objects.select_related('alumno', 'curso')
-    return render(request, 'core/lista_notas.html', {'notas': notas})
+    return render(request, 'alumnos/lista_notas.html', {'notas': notas})
 
 def home(request):
-    return render(request, 'core/home.html')
+    return render(request, 'alumnos/home.html')
 
 def crear_alumno(request):
     if request.method == 'POST':
@@ -56,7 +56,7 @@ def crear_alumno(request):
             return redirect('lista_alumnos')
     else:
         form = AlumnoForm()
-    return render(request, 'core/crear_alumno.html', {'form': form})
+    return render(request, 'alumnos/crear_alumno.html', {'form': form})
 
 def crear_nota(request):
     if request.method == 'POST':
@@ -66,4 +66,4 @@ def crear_nota(request):
             return redirect('lista_notas')
     else:
         form = NotaAlumnoPorCursoForm()
-    return render(request, 'core/crear_nota.html', {'form': form})
+    return render(request, 'alumnos/crear_nota.html', {'form': form})
