@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sistema de Notas</title>
+</head>
+<body>
+    <h1>Sistema de Gestión Académica</h1>
+    <ul>
+        <li><a href="{% url 'crear_alumno' %}">Registrar Alumno</a></li>
+        <li><a href="{% url 'lista_alumnos' %}">Ver Alumnos</a></li>
+        <li><a href="{% url 'crear_curso' %}">Registrar Curso</a></li>
+        <li><a href="{% url 'lista_cursos' %}">Ver Cursos</a></li>
+        <li><a href="{% url 'crear_nota' %}">Registrar Nota</a></li>
+        <li><a href="{% url 'lista_notas' %}">Ver Notas</a></li>
+    </ul>
+</body>
+</html>
